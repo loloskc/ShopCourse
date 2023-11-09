@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    bool isAuthenticated = User.Identity?.IsAuthenticated == true;
+}
+
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="~/svg/icon_home.svg" alt="" width="72" height="57">
+    <h1 class="display-5 fw-bold text-body-emphasis"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Онлайн магазин</font></font></h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Онлайн магазин</font></font></p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a type="button" class="btn btn-primary btn-lg px-4 gap-3" asp-action="Index" asp-controller="Product"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Перейти к товару</font></font></a>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <a type="button" class="btn btn-outline-secondary btn-lg px-4" asp-controller="Account" asp-action="Login"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Войти в личный кабинет</font></font></a>
+            }
+        </div>
+    </div>
+</div>
