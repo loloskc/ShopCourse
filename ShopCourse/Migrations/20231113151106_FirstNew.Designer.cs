@@ -12,8 +12,8 @@ using ShopCourse.Data;
 namespace ShopCourse.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231101003526_First")]
-    partial class First
+    [Migration("20231113151106_FirstNew")]
+    partial class FirstNew
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -169,8 +169,8 @@ namespace ShopCourse.Migrations
                     b.Property<string>("Discription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Image")
-                        .HasColumnType("int");
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
